@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Sans-Serif';
+    src: 
+        url('../assets/fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('../assets/fonts/OpenSans-Regular.woff') format('woff'),
+        url('../assets/fonts/OpenSans-Regular.ttf') format('ttf'),
+        url('../assets/fonts/OpenSans-Regular.eot') format('eot');
+}
+span, h2, .cards-container__item-content-description-price{
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+.cards-container__item-content-description-extra{
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 15px;
+    color: #9a9a9a;
+}
+.cards-container__item-content-description-title{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 15px;
+}
+.cards-container__item-content-description-price span{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+}
+#old-price{
+    color: red;
+}
+#new-price{
+    text-decoration: line-through;
+    margin-left: 6px;
+}
+#add-button-text{
+    text-transform: uppercase;
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.cards-container__item-content-description-grade,
+.cards-container__item-content-description-title{
+    margin-top: 6px;
+}
