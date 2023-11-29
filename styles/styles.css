@@ -16,7 +16,7 @@
 .product-tile{
     width: 280px;
     height: 480px;
-    background-color: black;
+    background-color:  #efefef;
     display: flex;
     align-items: center; 
     flex-direction: column;
