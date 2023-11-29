@@ -1,0 +1,29 @@
+@media(max-width: 1200px){
+    .cards-container{
+        max-width: 900px;
+    }
+}
+@media(max-width: 900px){
+    .cards-container{
+        max-width: 600px;
+    }
+}
+@media(max-width: 600px){
+    .cards-container{
+        max-width: 300px;
+    }
+    .product-tile{
+        margin-right: 0;
+        width: 300px;
+    }
+    .product-tile__content{
+        height: 380px;
+    }
+    .product-tile__add-button {
+        display: block;
+        margin: auto 0;
+    }
+    .product-tile__content-description{
+        margin-top: 10px;
+    }
+}
