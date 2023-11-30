@@ -24,6 +24,7 @@
         margin: auto 0;
     }
     .product-tile__content-description{
-        margin-top: 10px;
+        padding-top: 15px;
+        height: 90px;
     }
 }
