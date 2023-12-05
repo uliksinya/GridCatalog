@@ -16,7 +16,6 @@ for (let i = 0; i < 12; i++) {
 const filter = document.querySelector(".cards-filtration");
 filter.addEventListener('click', function(e) {
     let targetElement = e.target;
-    console.log(targetElement);
     if (targetElement.classList.contains('button') && !targetElement.classList.contains('button-selected')) {
         document.querySelectorAll('.button').forEach((button) => {
             if (button.dataset.filter === targetElement.dataset.filter) {
@@ -37,7 +36,7 @@ filter.addEventListener('click', function(e) {
             case
             'favourites'
             :
-                if (!item.classList.contains('favourite')) {
+                if (item.classList.contains('favourite')) {
                     item.style.display = 'flex';
                 }
                 else {
@@ -61,12 +60,10 @@ filter.addEventListener('click', function(e) {
 const cardsContainer = document.querySelector('.cards-container');
 cardsContainer.addEventListener('click', function(e) {
     let targetElement = e.target;
-    console.log(targetElement);
 
     if (targetElement.classList.contains('product-tile__content-dropdown-buttons-item') || targetElement.classList.contains('icon')){
         let btnId;
         if (targetElement.tagName.toLowerCase() === 'button') {
-            console.log("тут");
             btnId = targetElement.id
         } else {
             btnId = targetElement.parentNode.id;
@@ -109,9 +106,7 @@ cardsContainer.addEventListener('click', function(e) {
         }
     }
 })
-
 const myCheckbox = document.getElementById('show');
-
 myCheckbox.addEventListener('click', function() {
     const tiles = document.querySelectorAll('.product-tile');
     if (this.checked) {

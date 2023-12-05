@@ -22,25 +22,22 @@
     background: linear-gradient(90deg, #62a2d2, #efefef);
     margin-right: 20px;
 }
-/* Основной стиль кнопки */
-.button {
-    /* Светло-белый цвет */
-    background: white linear-gradient(to bottom, #ffffff, #d8d7d7);
-    border: none; /* Убираем границу */
-    padding: 10px 20px; /* Подходящий отступ */
-    font-size: 16px; /* Размер шрифта */
-    font-weight: 400;
-    color: #333333; /* Цвет текста */
-    border-radius: 5px; /* Скругление углов */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
-    transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
-}
 .buttons-container{
     display: flex;
     justify-content: space-between;
     width: 330px;
 }
-/* Изменение стиля при наведении */
+.button {
+    background: white linear-gradient(to bottom, #ffffff, #d8d7d7);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
 .button:hover {
     background: linear-gradient(to bottom, #e2e1e1, #aeadad); /* Темнее при наведении */
 }
@@ -58,7 +55,6 @@
 .cards-container{
     display: flex;
     flex-wrap: wrap;
-
 }
 .product-tile{
     width: 280px;
@@ -159,9 +155,6 @@
     background-color: #c5c4c4;
     opacity: 1;
 }
-/*.product-tile__content-dropdown-buttons-item.active {*/
-/*    background-color: #b2dcfd;*/
-/*}*/
 .product-tile__content-dropdown-buttons-item.active-hide{
     background-color: #b2dcfd;
 }
