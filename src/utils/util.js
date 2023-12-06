@@ -1,7 +1,13 @@
 export function getIdNum(component){
     return component.getAttribute('id').split("-")[1]
 }
-export function addClassIfIdExists(ids, arrFromLS, tileModifierName, btn, btnModifierName){
+export function showTile(item){
+    item.style.display = 'flex';
+}
+export function hideTile(item){
+    item.style.display = 'none';
+}
+/*export function addClassIfIdExists(ids, arrFromLS, tileModifierName, btn, btnModifierName){
     if(arrFromLS.length !== 0) {
         for (let i = 0; i < ids.length; i++) {
             if (arrFromLS.includes(ids[i])) {
@@ -12,7 +18,7 @@ export function addClassIfIdExists(ids, arrFromLS, tileModifierName, btn, btnMod
         }
     }
 }
-/*document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const hideTilesArr = getHideTilesMas();
     const favouriteTilesArr = getFavouritesTilesMas();
     const comparisonTilesArr = getComparisonTileMas();

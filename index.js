@@ -7,7 +7,8 @@ import {
     removeFavoritesTileIdInLS,
     removeHideTileIdInLS
 } from "./src/utils/localStorage.js";
-import { getIdNum} from "./src/utils/util.js";
+import {getIdNum, hideTile, showTile} from "./src/utils/util.js";
+import {filtration} from "./src/listeners/filtrationListener.js";
 
 const tilesContainer = document.querySelector('.cards-container');
 
@@ -26,40 +27,11 @@ filter.addEventListener('click', function(e) {
             }
         })
     }
-    document.querySelectorAll('.product-tile').forEach((item) => {
-        switch (targetElement.dataset.filter) {
-            case
-            'all'
-            :
-                item.style.display = 'flex';
-                break;
-
-            case
-            'favourites'
-            :
-                if (item.classList.contains('favourite')) {
-                    item.style.display = 'flex';
-                }
-                else {
-                    item.style.display = 'none';
-                }
-                break;
-
-            case
-            'comparison'
-            :
-                if (item.classList.contains('comparison')) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-                break;
-        }
-    })
+    filtration(targetElement);
 })
 
 const cardsContainer = document.querySelector('.cards-container');
-cardsContainer.addEventListener('click', function(e) {
+cardsContainer.addEventListener('click', (e) => {
     let targetElement = e.target;
 
     if (targetElement.classList.contains('product-tile__content-dropdown-buttons-item') || targetElement.classList.contains('icon')){
@@ -88,8 +60,10 @@ cardsContainer.addEventListener('click', function(e) {
                 btn.classList.toggle('active-fav');
                 productTile.classList.toggle('favourite');
                 if (productTile.classList.contains('favourite')) {
+                    showTile(productTile);
                     addFavouritesTileIdInLS(productId);
                 } else {
+                    hideTile(productTile);
                     removeFavoritesTileIdInLS(productId);
                 }
                 break;
@@ -97,8 +71,10 @@ cardsContainer.addEventListener('click', function(e) {
                 btn.classList.toggle('active-comparison');
                 productTile.classList.toggle('comparison');
                 if (productTile.classList.contains('comparison')) {
+                    showTile(productTile);
                     addComparisonTileIdInLS(productId);
                 } else {
+                    hideTile(productTile);
                     removeComparisonTileIdInLS(productId);
                 }
                 break;
@@ -113,14 +89,14 @@ myCheckbox.addEventListener('click', function() {
     if (this.checked) {
         tiles.forEach((tile) => {
             if (tile.classList.contains('hide')) {
-                tile.style.display = 'flex';
+                showTile(tile)
             }
         })
     }
     else {
         tiles.forEach((tile) => {
             if (tile.classList.contains('hide')) {
-                tile.style.display = 'none';
+                hideTile(tile)
             }
         })
     }
