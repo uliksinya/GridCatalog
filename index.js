@@ -1,4 +1,4 @@
-import {createTile} from "./src/componets/tileCreation.js";
+import {createTile} from "./src/utils/tileCreation.js";
 import {
     addComparisonTileIdInLS,
     addFavouritesTileIdInLS,
@@ -6,7 +6,8 @@ import {
     removeComparisonTileIdInLS,
     removeFavoritesTileIdInLS,
     removeHideTileIdInLS
-} from "./src/componets/localStorage.js";
+} from "./src/utils/localStorage.js";
+import { getIdNum} from "./src/utils/util.js";
 
 const tilesContainer = document.querySelector('.cards-container');
 
@@ -25,7 +26,7 @@ filter.addEventListener('click', function(e) {
             }
         })
     }
-    document.querySelectorAll('.product-tile').forEach((item, i) => {
+    document.querySelectorAll('.product-tile').forEach((item) => {
         switch (targetElement.dataset.filter) {
             case
             'all'
@@ -69,9 +70,9 @@ cardsContainer.addEventListener('click', function(e) {
             btnId = targetElement.parentNode.id;
         }
         const btn = document.getElementById(btnId);
-        const btnNumID = btn.getAttribute('id').split("-")[1];
+        const btnNumID = getIdNum(btn);
         const productTile = document.getElementById(`productTile-${btnNumID}`);
-        const productId = productTile.getAttribute('id').split("-")[1];
+        const productId = getIdNum(productTile);
 
         switch (btn.dataset.button) {
             case 'hideBtn':
