@@ -2,10 +2,10 @@ export function getIdNum(component){
     return component.getAttribute('id').split("-")[1]
 }
 export function showTile(item){
-    item.style.display = 'flex';
+    item.classList.remove('remote');
 }
 export function hideTile(item){
-    item.style.display = 'none';
+    item.classList.add('remote');
 }
 /*export function addClassIfIdExists(ids, arrFromLS, tileModifierName, btn, btnModifierName){
     if(arrFromLS.length !== 0) {

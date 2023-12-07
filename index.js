@@ -60,10 +60,8 @@ cardsContainer.addEventListener('click', (e) => {
                 btn.classList.toggle('active-fav');
                 productTile.classList.toggle('favourite');
                 if (productTile.classList.contains('favourite')) {
-                    showTile(productTile);
                     addFavouritesTileIdInLS(productId);
                 } else {
-                    hideTile(productTile);
                     removeFavoritesTileIdInLS(productId);
                 }
                 break;
@@ -71,14 +69,10 @@ cardsContainer.addEventListener('click', (e) => {
                 btn.classList.toggle('active-comparison');
                 productTile.classList.toggle('comparison');
                 if (productTile.classList.contains('comparison')) {
-                    showTile(productTile);
                     addComparisonTileIdInLS(productId);
                 } else {
-                    hideTile(productTile);
                     removeComparisonTileIdInLS(productId);
                 }
-                break;
-            default:
                 break;
         }
     }
