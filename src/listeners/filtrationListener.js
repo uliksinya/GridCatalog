@@ -6,28 +6,19 @@ export function filtration(targetElement){
             case
             'all'
             :
-                showTile(item);
+                item.classList.remove('remote');
                 break;
 
             case
             'favourites'
             :
-                if (!item.classList.contains('favourite')) {
-                    hideTile(item);
-                }
-                else {
-                    showTile(item);
-                }
+                item.classList.toggle('remote', !item.classList.contains('favourite'));
                 break;
 
             case
             'comparison'
             :
-                if (!item.classList.contains('comparison')) {
-                    hideTile(item);
-                } else {
-                    showTile(item);
-                }
+                item.classList.toggle('remote', !item.classList.contains('comparison'));
                 break;
         }
     })
