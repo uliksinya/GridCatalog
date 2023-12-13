@@ -1,6 +1,5 @@
 import {createTile} from "./utils/tileCreation.js";
-import {eventOnFilterButton, getIdNum, hideTile, showTile} from "./utils/util.js";
-import {filtration} from "./listeners/filtrationListener.js";
+import { hideTile } from "./utils/util.js";
 import {handleFilter} from "./listeners/btnFiltrationListener.js";
 import {handleTileButtonClick} from "./listeners/tileButtonsListener.js";
 import {loadDataFromLS} from "./utils/loadDataFromLS.js";
@@ -30,7 +29,6 @@ myCheckbox.addEventListener('click', function() {
             if (tile.classList.contains('hide')) {
                 tile.classList.remove('remote')
             }
-
         })
     }
     else {
@@ -40,14 +38,4 @@ myCheckbox.addEventListener('click', function() {
             }
         })
     }
-
-    // tiles.forEach((tile) => {
-    //     if(this.checked && tile.classList.contains('hide')) {
-    //         tile.classList.remove('remote');
-    //     }
-    //     else {
-    //         tile.classList.toggle('remote', !!tile.classList.contains('hide'));
-    //     }
-    // });
-
 })
