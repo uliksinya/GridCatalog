@@ -1,15 +1,16 @@
 import {createTile} from "./utils/tileCreation.js";
-import { hideTile } from "./utils/util.js";
 import {handleFilter} from "./listeners/btnFiltrationListener.js";
 import {handleTileButtonClick} from "./listeners/tileButtonsListener.js";
 import {loadDataFromLS} from "./utils/loadDataFromLS.js";
+import {tilesArray} from "./data/tilesArray.js";
+import {filterStartTiles} from "./utils/util.js";
 
 const tilesContainer = document.querySelector('.cards-container');
-for (let i = 0; i < 12; i++) {
-    tilesContainer.innerHTML += createTile(i, `assets/img/book${i}.jpg`, 3.4);
-}
+tilesArray.forEach((tile, id) => {
+    tilesContainer.innerHTML += createTile(id, tile.image, tile.extraText, tile.grade, tile.title, tile.oldPrice, tile.newPrice);
+})
 
-document.addEventListener('DOMContentLoaded', loadDataFromLS());
+document.addEventListener('DOMContentLoaded', loadDataFromLS(), filterStartTiles());
 
 const filter = document.querySelector(".cards-filtration");
 filter.addEventListener('click', handleFilter);
@@ -19,23 +20,5 @@ cardsContainer.addEventListener('click', (e) => {
     let targetElement = e.target;
     if (targetElement.classList.contains('product-tile__content-dropdown-buttons-item') || targetElement.classList.contains('icon')){
         handleTileButtonClick(targetElement);
-    }
-})
-const myCheckbox = document.getElementById('show');
-myCheckbox.addEventListener('click', function() {
-    const tiles = document.querySelectorAll('.product-tile');
-    if (this.checked) {
-        tiles.forEach((tile) => {
-            if (tile.classList.contains('hide')) {
-                tile.classList.remove('remote')
-            }
-        })
-    }
-    else {
-        tiles.forEach((tile) => {
-            if (tile.classList.contains('hide')) {
-                hideTile(tile)
-            }
-        })
     }
 })

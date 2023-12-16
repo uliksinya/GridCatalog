@@ -1,9 +1,9 @@
-export const createTile = (ID, imgPath, rating) => {
+export const createTile = (ID, image, extraText, grade, title, oldPrice, newPrice) => {
     return `
         <figure class="product-tile" id="productTile-${ID}" data-hide="false">
             <div class="product-tile__content">
                 <div class="product-tile__content-img">
-                    <img src="${imgPath}" alt="Bear town" title="Bear town"/>
+                    <img src="../../../src/assets/img/book${image}.jpg" alt="Book Image" title="Book Image"/>
                 </div>
                 <div class="product-tile__content-icon-new">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 69.4" xml:space="preserve">
@@ -12,8 +12,8 @@ export const createTile = (ID, imgPath, rating) => {
                     </svg>
                 </div>
                 <figcaption class="product-tile__content-description">
-                    <span class="product-tile__content-description-extra">T-shirts</span>
-                    <div class="product-grade" data-rating="${rating}">
+                    <span class="product-tile__content-description-extra">${extraText}</span>
+                    <div class="product-grade" data-rating="${grade}">
                         <div class="product-grade__stars">
 
                             <div><i class="fa-regular fa-star"></i></div>
@@ -31,10 +31,10 @@ export const createTile = (ID, imgPath, rating) => {
                             </div>
                         </div>
                     </div>
-                    <h2 class="product-tile__content-description-title">Flared Shift Dress</h2>
+                    <h2 class="product-tile__content-description-title">${title}</h2>
                     <div class="product-tile__content-description-price">
-                        <span class="old">$14</span>
-                        <span class="new">$24</span>
+                        <span class="old">${oldPrice}</span>
+                        <span class="new">${newPrice}</span>
                     </div>
                 </figcaption>
                 <div class="product-tile__content-dropdown-buttons">

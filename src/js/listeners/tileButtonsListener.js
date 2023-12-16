@@ -1,5 +1,4 @@
-import {eventOnFilterButton, getIdNum} from "../utils/util.js";
-
+import {checkedCheckbox, eventOnFilterButton, getIdNum} from "../utils/util.js";
 export function handleTileButtonClick (targetElement) {
     let btnId;
     if (targetElement.tagName.toLowerCase() === 'button') {
@@ -18,6 +17,10 @@ export function handleTileButtonClick (targetElement) {
             break;
         case 'favoritesBtn':
             eventOnFilterButton(btn, productTile, 'active-fav', 'favourite', productId, 'FavouritesTiles');
+            // item.classList.toggle('remote', !item.classList.contains('favourite'));
+            // if (item.classList.contains('favourite')){
+            //     checkedCheckbox(item, myCheckbox);
+            // }
             break;
         case 'comparisonBtn':
             eventOnFilterButton(btn, productTile, 'active-comparison', 'comparison', productId, 'ComparisonTiles');

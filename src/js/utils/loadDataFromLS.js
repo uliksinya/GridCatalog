@@ -1,13 +1,18 @@
-import {getTilesMasFromLS} from "./localStorage.js";
-
+import {getCheckboxStateFromLS, getTilesMasFromLS} from "./localStorage.js";
+import {checkedCheckbox} from "./util.js";
 export function loadDataFromLS(){
-    const hidesArr = getTilesMasFromLS('HideTiles');
-    const favouritesArr = getTilesMasFromLS('FavouritesTiles');
-    const comparisonArr = getTilesMasFromLS('ComparisonTiles');
+    const hidesArr = getTilesMasFromLS('HideTiles')||[];
+    const favouritesArr = getTilesMasFromLS('FavouritesTiles')||[];
+    const comparisonArr = getTilesMasFromLS('ComparisonTiles')||[];
+    const checkboxState = getCheckboxStateFromLS();
 
     updateTile(hidesArr, 'hide', 'hide', 'active-hide');
     updateTile(favouritesArr, 'fav', 'favourite', 'active-fav');
     updateTile(comparisonArr, 'comp', 'comparison', 'active-comparison');
+
+    const myCheckbox = document.getElementById('show');
+    myCheckbox.checked = checkboxState;
+
 }
 export function updateTile(tilesIdsArr, btnIdType, tileType, btnType){
     if (tilesIdsArr.length !== 0){

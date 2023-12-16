@@ -29,3 +29,15 @@ export function getTilesMasFromLS(itemInLSKey){
        return JSON.parse(itemFromLS);
     }
 }
+export function addCheckboxStateToLS(isChecked){
+    localStorage.setItem('CheckboxState', JSON.stringify(isChecked));
+}
+export function getCheckboxStateFromLS(){
+    const itemFromLS = localStorage.getItem('CheckboxState');
+    if(itemFromLS){
+        return JSON.parse(itemFromLS);
+    }else{
+        localStorage.setItem('CheckboxState', JSON.stringify(true));
+        return true;
+    }
+}

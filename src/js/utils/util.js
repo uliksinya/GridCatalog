@@ -1,13 +1,6 @@
 import {addTileIdInLS, removeTileIdFromLS} from "./localStorage.js";
-
 export function getIdNum(component){
     return component.getAttribute('id').split("-")[1]
-}
-export function showTile(item){
-    item.classList.remove('remote');
-}
-export function hideTile(item){
-    item.classList.add('remote');
 }
 
 export function eventOnFilterButton(btn, productTile, activeBtn, activeTile, productId, itemInLSKey){
@@ -18,4 +11,17 @@ export function eventOnFilterButton(btn, productTile, activeBtn, activeTile, pro
     } else {
         removeTileIdFromLS(productId, itemInLSKey);
     }
+}
+export function checkedCheckbox(item, myCheckbox){
+    if(item.classList.contains('hide') && myCheckbox.checked === false){
+        item.classList.add('remote');
+    }else{
+        item.classList.remove('remote');
+    }
+}
+export function filterStartTiles(){
+    const myCheckbox = document.getElementById('show');
+    document.querySelectorAll('.product-tile').forEach((item) => {
+        checkedCheckbox(item, myCheckbox);
+    })
 }

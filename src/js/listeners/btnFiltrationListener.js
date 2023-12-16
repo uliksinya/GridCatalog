@@ -1,4 +1,4 @@
-import {filtration} from "./filtrationListener.js";
+import {filtration} from "./filtration.js";
 
 export function handleFilter(e){
     let targetElement = e.target;
@@ -7,5 +7,6 @@ export function handleFilter(e){
             button.classList.toggle('button-selected', button.dataset.filter === targetElement.dataset.filter);
         })
     }
+    console.log('handleFilter');
     filtration(targetElement);
 }

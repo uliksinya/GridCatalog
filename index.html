@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid of catalog</title>
-    <link rel="stylesheet" href="assets/styles/styles.css">
-    <link rel="stylesheet" href="assets/styles/media.css">
-    <link href="./assets/fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="./assets/fontawesome/css/solid.css" rel="stylesheet">
-    <link href="./assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/assets/styles/styles.css">
+    <link rel="stylesheet" href="src/assets/styles/media.css">
+    <link href="src/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="src/assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="src/assets/fontawesome/css/regular.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css"/>
 </head>
 <body>
@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <div class="pretty p-switch p-fill">
-                            <input type="checkbox" class="hide-checkbox" name="show" id="show" checked/>
+                            <input type="checkbox" class="hide-checkbox" name="show" id="show" data-filter="checkbox"/>
                             <div class="state">
                                 <label>Show hidden</label>
                             </div>
@@ -32,6 +32,6 @@
             </header>
             <section class="cards-container"></section>
     </section>
-    <script src="src/index.js" type="module"></script>
+    <script src="src/js/index.js" type="module"></script>
 </body>
 </html>
