@@ -38,7 +38,7 @@ export const createTile = (ID, image, extraText, grade, title, oldPrice, newPric
                     </div>
                 </figcaption>
                 <div class="product-tile__content-dropdown-buttons">
-                    <button class="product-tile__content-dropdown-buttons-item" id="hide-${ID}" data-button="hideBtn" ><i class="icon fa-regular fa-eye"></i></button>
+                    <button class="product-tile__content-dropdown-buttons-item" id="hide-${ID}" data-button="hideBtn"><i class="icon fa-regular fa-eye"></i></button>
                     <button class="product-tile__content-dropdown-buttons-item" id="fav-${ID}" data-button="favoritesBtn"><i class="icon fa-regular fa-heart"></i></button>
                     <button class="product-tile__content-dropdown-buttons-item" id="comp-${ID}" data-button="comparisonBtn"><i class="icon fa-solid fa-scale-balanced"></i></button>
                 </div>                 

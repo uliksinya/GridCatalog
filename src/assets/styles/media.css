@@ -1,3 +1,19 @@
+@media (max-width: 1920px) {
+    .cards-header {
+        width: 1480px;
+    }
+    .cards-container {
+        width: 1500px;
+    }
+}
+@media(max-width: 1500px){
+    .cards-header {
+        width: 1180px;
+    }
+    .cards-container {
+        width: 1200px;
+    }
+}
 @media(max-width: 1200px){
     .cards-container{
         max-width: 900px;
@@ -45,7 +61,7 @@
     .button{
         width: 80px;
         height: 30px;
-        font-size: 10px;
+        font-size: 13px;
         padding: 0;
     }
     .cards-filtration{

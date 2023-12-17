@@ -25,3 +25,9 @@ export function filterStartTiles(){
         checkedCheckbox(item, myCheckbox);
     })
 }
+export function toggleFilterButton(item, myCheckbox, className){
+    item.classList.toggle('remote', !item.classList.contains(className));
+    if (item.classList.contains(className)){
+        checkedCheckbox(item, myCheckbox);
+    }
+}

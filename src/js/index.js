@@ -9,8 +9,10 @@ const tilesContainer = document.querySelector('.cards-container');
 tilesArray.forEach((tile, id) => {
     tilesContainer.innerHTML += createTile(id, tile.image, tile.extraText, tile.grade, tile.title, tile.oldPrice, tile.newPrice);
 })
-
-document.addEventListener('DOMContentLoaded', loadDataFromLS(), filterStartTiles());
+document.addEventListener('DOMContentLoaded', () => {
+    loadDataFromLS();
+    filterStartTiles();
+});
 
 const filter = document.querySelector(".cards-filtration");
 filter.addEventListener('click', handleFilter);

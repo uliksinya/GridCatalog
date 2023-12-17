@@ -1,8 +1,6 @@
-import {checkedCheckbox} from "../utils/util.js";
+import {checkedCheckbox, toggleFilterButton} from "../utils/util.js";
 import {addCheckboxStateToLS} from "../utils/localStorage.js";
-
 export function filtration(targetElement){
-    console.log('filtration');
     document.querySelectorAll('.product-tile').forEach((item) => {
         const myCheckbox = document.getElementById('show');
         const activeFilterBtn = document.querySelector('.button-selected');
@@ -15,13 +13,11 @@ export function filtration(targetElement){
                 if(activeFilterBtn.dataset.filter === 'all'){
                     checkedCheckbox(item, myCheckbox);
                 }
-                if(activeFilterBtn.dataset.filter === 'favourites' && item.classList.contains('favourite')){
-                    item.classList.toggle('remote', !item.classList.contains('favourite'));
-                    checkedCheckbox(item, myCheckbox);
+                if(activeFilterBtn.dataset.filter === 'favourites'){
+                    toggleFilterButton(item, myCheckbox, 'favourite');
                 }
-                if(activeFilterBtn.dataset.filter === 'comparison' && item.classList.contains('comparison')){
-                    item.classList.toggle('remote', !item.classList.contains('comparison'));
-                    checkedCheckbox(item, myCheckbox);
+                if(activeFilterBtn.dataset.filter === 'comparison'){
+                    toggleFilterButton(item, myCheckbox, 'comparison');
                 }
                 break;
 
@@ -34,19 +30,13 @@ export function filtration(targetElement){
             case
             'favourites'
             :
-                item.classList.toggle('remote', !item.classList.contains('favourite'));
-                if (item.classList.contains('favourite')){
-                    checkedCheckbox(item, myCheckbox);
-                }
+                toggleFilterButton(item, myCheckbox, 'favourite');
                 break;
 
             case
             'comparison'
             :
-                item.classList.toggle('remote', !item.classList.contains('comparison'));
-                if (item.classList.contains('comparison')){
-                    checkedCheckbox(item, myCheckbox);
-                }
+                toggleFilterButton(item, myCheckbox, 'comparison');
                 break;
         }
     })

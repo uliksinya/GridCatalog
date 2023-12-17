@@ -1,19 +1,27 @@
 import {getCheckboxStateFromLS, getTilesMasFromLS} from "./localStorage.js";
 import {checkedCheckbox} from "./util.js";
-export function loadDataFromLS(){
-    const hidesArr = getTilesMasFromLS('HideTiles')||[];
-    const favouritesArr = getTilesMasFromLS('FavouritesTiles')||[];
-    const comparisonArr = getTilesMasFromLS('ComparisonTiles')||[];
-    const checkboxState = getCheckboxStateFromLS();
+export function loadDataFromLS() {
+    try {
+        const hidesArr = getTilesMasFromLS('HideTiles') || [];
+        const favouritesArr = getTilesMasFromLS('FavouritesTiles') || [];
+        const comparisonArr = getTilesMasFromLS('ComparisonTiles') || [];
 
-    updateTile(hidesArr, 'hide', 'hide', 'active-hide');
-    updateTile(favouritesArr, 'fav', 'favourite', 'active-fav');
-    updateTile(comparisonArr, 'comp', 'comparison', 'active-comparison');
+        const checkboxState = getCheckboxStateFromLS();
 
-    const myCheckbox = document.getElementById('show');
-    myCheckbox.checked = checkboxState;
+        updateTile(hidesArr, 'hide', 'hide', 'active-hide');
+        updateTile(favouritesArr, 'fav', 'favourite', 'active-fav');
+        updateTile(comparisonArr, 'comp', 'comparison', 'active-comparison');
 
+        const myCheckbox = document.getElementById('show');
+        myCheckbox.checked = checkboxState;
+        return true;
+
+    } catch (error) {
+        console.error('Error loading data:', error);
+        return false;
+    }
 }
+
 export function updateTile(tilesIdsArr, btnIdType, tileType, btnType){
     if (tilesIdsArr.length !== 0){
         tilesIdsArr.forEach((id) =>{

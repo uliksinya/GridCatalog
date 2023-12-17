@@ -51,7 +51,7 @@
     transition: background-color 0.3s;
 }
 .button:hover {
-    background: linear-gradient(to bottom, #e2e1e1, #aeadad); /* Темнее при наведении */
+    background: linear-gradient(to bottom, #e2e1e1, #aeadad);
 }
 .button:active{
     background: linear-gradient(to bottom, #ffffff, #f2f1f1);
